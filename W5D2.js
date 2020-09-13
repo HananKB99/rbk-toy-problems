@@ -2,7 +2,7 @@
 1) implement the last version of each 
 */
 
-function each(coll, func) {
+function each(coll,  func) {
  //write your code here  
   if(Array.isArray){
   for(var i = 0; i<coll.length;i++){
