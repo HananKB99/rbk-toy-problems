@@ -18,4 +18,33 @@ Would return:
 ["Ben Bitdiddle: August 19, 1984", "Lem Tweakit: August 11, 1989"]
 
 */
+function each (coll, f){
+if (Array.isArray(coll)){
+  for (var i = 0; i < coll.length; i++){
+    f(coll[i], i);
+  }
+} else {
+  for (var key in coll) {
+    f(coll[key], key);
+  }
+  }
+}
+function filter (array, predicate){
+  var acc = [];
+  if(Array.isArray(array)){
+  each (array, function(element,i)
+  {
+    if (predicate (element, i)) {
+      acc.push(element);
+    }
+  })
+ }
+}
+function getPeopleBornIn(array,month){
+	return filter(array,function(element){
+		return element.birthday.month === month
+	})
+}
+getPeopleBornIn(staff, 'August')
+
 
